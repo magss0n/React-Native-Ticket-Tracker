@@ -1,7 +1,7 @@
 import { use, useState } from 'react';
 import { StyleSheet, ScrollView, Modal, Text, View, StatusBar, FlatList, Button, Pressable, TextInput, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
@@ -43,7 +43,7 @@ export default function App() {
 
 
   return (
-    <SafeAreaProvider style={styles.safeContainer}>
+    <SafeAreaView style={styles.safeContainer}>
       <StatusBar backgroundColor="lightblue" barStyle="light-content" hidden></StatusBar>
 
       <Text style={styles.title}>Your Tickets</Text>
@@ -163,7 +163,7 @@ export default function App() {
 
 
       </ScrollView>
-    </SafeAreaProvider>
+    </SafeAreaView>
   );
 }
 
@@ -204,26 +204,6 @@ const TicketItem = ({ ticket, onDelete, onEdit }: { ticket: { status: string, id
   )
 
 }
-
-
-// let tickets = [
-//   { status: "Created", id: 1, title: "Task One", description: "Complete the initial setup.", rating: 1 },
-//   { status: "Under Assistance", id: 2, title: "Task Two", description: "Review the documentation.", rating: null },
-//   { status: "Created", id: 3, title: "Task Three", description: "Awaiting client feedback.", rating: 2 },
-//   { status: "Completed", id: 4, title: "Task Four", description: "Finalize the design mockups.", rating: null },
-//   { status: "Under Assistance", id: 5, title: "Task Five", description: "Implement user authentication." , rating: 3},
-//   { status: "Created", id: 6, title: "Task Six", description: "Set up database schema.", rating: null },
-//   { status: "Created", id: 7, title: "Task Seven", description: "Schedule team meeting.", rating: 4 },
-//   { status: "Completed", id: 8, title: "Task Eight", description: "Deploy to staging environment." , rating: null},
-//   { status: "Under Assistance", id: 9, title: "Task Nine", description: "Write unit tests.", rating: 5 },
-//   { status: "Created", id: 10, title: "Task Ten", description: "Update project roadmap." , rating: null},
-//   { status: "Created", id: 11, title: "Task Eleven", description: "Gather user requirements." , rating: 0},
-//   { status: "Completed", id: 12, title: "Task Twelve", description: "Fix reported bugs.", rating: null },
-//   { status: "Created", id: 13, title: "Task Thirteen", description: "Optimize performance." , rating: 1},
-//   { status: "Under Assistance", id: 14, title: "Task Fourteen", description: "Refactor legacy code." , rating: null},
-//   { status: "Completed", id: 15, title: "Task Fifteen", description: "Prepare release notes.", rating: 4 }
-// ];
-
 
 const styles = StyleSheet.create({
   safeContainer: {
